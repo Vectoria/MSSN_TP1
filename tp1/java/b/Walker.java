@@ -5,7 +5,7 @@ import processing.core.PVector;
 
 import java.util.List;
 
-public class Walker {
+public class Walker  {
     private PVector pos;
     private State state;
     private int radius = 5;
@@ -23,7 +23,6 @@ public class Walker {
 
     // Seed estacionÃ¡ria
     public Walker(int x, int y) {
-
         pos = new PVector(x, y);
         state = State.STOPPED;
     }
@@ -37,6 +36,12 @@ public class Walker {
     }
 
     public void display(PApplet p) {
+        if(state==State.STOPPED){
+            p.fill(231,20,105);
+        }
+        else{
+            p.fill(0,0,240);
+        }
         p.circle(pos.x, pos.y, 2 * radius);
     }
 
@@ -82,3 +87,4 @@ public class Walker {
     }
 
 }
+
