@@ -34,8 +34,9 @@ public class Walker  {
     public void setState(State state) {
         this.state = state;
     }
+    // mostrar no relatorio sobre como ver os displays, e comentar os displays que n vou mostrar no DLA, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
-    public void display(PApplet p) {
+    public void displayBolas(PApplet p) {
         if(state==State.STOPPED){
             p.fill(231,20,105);
         }
@@ -43,6 +44,37 @@ public class Walker  {
             p.fill(0,0,240);
         }
         p.circle(pos.x, pos.y, 2 * radius);
+    }
+
+    public void displayQuadrado(PApplet p) {
+        if(state==State.STOPPED){
+            p.fill(231,20,105);
+        }
+        else{
+            p.fill(0,0,240);
+        }
+        p.rect(pos.x, pos.y, 2 * radius, 2*radius);
+    }
+
+    public void displayTriangulo(PApplet p) {
+        if(state==State.STOPPED){
+            p.fill(231,20,105);
+        }
+        else{
+            p.fill(0,0,240);
+        }
+        //bueda fixe
+       // p.triangle(pos.x,pos.y,radius*2,radius*2,-radius*2,-radius*2);
+        p.triangle(pos.x-radius*2,pos.y,pos.x,pos.y-2*radius,pos.x+2*radius,pos.y);
+    }
+    public void displayCanva(PApplet p) {
+        if(state==State.STOPPED){
+            p.fill(231,20,105);
+        }
+        else{
+            p.fill(0,0,240);
+        }
+        p.rect(pos.x, pos.y, 2 * radius, 2*radius);
     }
 
     public void wander(PApplet p) {
@@ -87,4 +119,3 @@ public class Walker  {
     }
 
 }
-
