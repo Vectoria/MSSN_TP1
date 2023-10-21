@@ -67,19 +67,12 @@ public class Walker  {
        // p.triangle(pos.x,pos.y,radius*2,radius*2,-radius*2,-radius*2);
         p.triangle(pos.x-radius*2,pos.y,pos.x,pos.y-2*radius,pos.x+2*radius,pos.y);
     }
-    public void displayCanva(PApplet p) {
-        if(state==State.STOPPED){
-            p.fill(231,20,105);
-        }
-        else{
-            p.fill(0,0,240);
-        }
-        p.rect(pos.x, pos.y, 2 * radius, 2*radius);
-    }
+
 
     public void wander(PApplet p) {
         if(state == State.WANDER) {
             PVector step = PVector.random2D();
+           // step.mult(p.width/2);
             pos.add(step);
             pos.lerp(new PVector(p.width / 2, p.height / 2), 0.0002f);
             pos.x = PApplet.constrain(pos.x, 0, p.width);
@@ -110,7 +103,7 @@ public class Walker  {
                 float dist = PVector.dist(pos, w.pos);
 
                 if(dist < 2 * radius) {
-                    parar++;
+                   // parar++;
                     setState(State.STOPPED);
                     break;
                 }
