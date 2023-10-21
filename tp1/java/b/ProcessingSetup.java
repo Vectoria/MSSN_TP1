@@ -7,7 +7,7 @@ public class ProcessingSetup extends PApplet {
     private int lastUpdate;
     @Override
     public void settings() {
-        size(1024, 768);
+        size(1024, 1024);
     }
     @Override
     public void setup() {
