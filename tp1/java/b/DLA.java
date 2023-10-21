@@ -11,7 +11,7 @@ public class DLA implements IProcessingApp {
     private static final int NUM_WALKERS = 100;
     private static final int NUM_STEPS_PER_FRAME = 90;
     private List<Walker> walkers;
-    private int parar = 0;
+    private static int parar = 0;
 
     @Override
     public void setup(PApplet p) {
@@ -45,8 +45,8 @@ public class DLA implements IProcessingApp {
 
 
         for (Walker w : walkers) {
-            //w.displayBolas(p);
-            w.displayQuadrado(p);
+            w.displayBolas(p);
+           // w.displayQuadrado(p);
             //w.displayTriangulo(p);
 
         }
