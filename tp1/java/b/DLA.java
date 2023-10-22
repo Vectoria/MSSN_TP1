@@ -9,7 +9,7 @@ import java.util.List;
 public class DLA implements IProcessingApp {
 
 
-    private static final int NUM_WALKERS = 150;
+    private static final int NUM_WALKERS = 64;
     private static final int NUM_STEPS_PER_FRAME = 90;
     private List<Walker> walkers;
 
